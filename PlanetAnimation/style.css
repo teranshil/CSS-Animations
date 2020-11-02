@@ -1,0 +1,108 @@
+*,
+*::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	background-color: #182357;
+}
+
+.container h2 {
+	margin-bottom: 2.5rem;
+	font-size: 2.2rem;
+	font-weight: 900;
+	color: white;
+}
+
+.planet {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	/*background: bisque;*/
+	border-radius: 50%;
+
+}
+
+.loader {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	animation: animation 3.5s infinite linear;
+}
+
+.loader::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to top, transparent, rgba(0, 255, 249, .4)) no-repeat;
+	border-top-left-radius: 200px;
+	border-bottom-left-radius: 200px;
+}
+
+@keyframes animation {
+	0% {
+		transform: rotate(0);
+	} 100% {
+		  transform: rotate(360deg);
+	  }
+}
+
+.loader::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgba(0, 255, 249, 0.8);
+	transform: translateX(-50%);
+	box-shadow: 0 0 15px 5px rgba(0, 255, 249, .3);
+	z-index: -1;
+}
+.loader span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 94%;
+	height: 94%;
+	border-radius: 50%;
+	background-color: #182357;
+	z-index: 10;
+}
+.earth {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 90%;
+	height: 90%;
+	border-radius: 50%;
+	background: url(./assets/earth.jpg);
+	box-shadow: inset 0 0 20px #04a9f4,
+				0 0 100px #04a9f4;
+	animation: move 20s infinite linear;
+}
+@keyframes move {
+	0% {
+		background-position: 0;
+	} 100% {
+		background-position: 150%;
+	}
+}

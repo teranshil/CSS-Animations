@@ -1,0 +1,45 @@
+*,
+*::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #cde8f8;
+}
+
+.container {
+	position: relative;
+	display: flex;
+}
+
+.container span {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px rgba(0, 0, 0 .8);
+	box-shadow: inset -5px -5px 5px rgba(255, 255, 255, .5),
+				inset 5px 5px 5px rgba(0, 0, 0, .2);
+	animation: animation linear 5s infinite;
+	animation-delay: calc(0.5s * var(--i));
+}
+
+@-webkit-keyframes animation {
+
+	0% {
+		box-shadow: -5px -5px 5px rgba(255, 255, 255, .6),
+					 5px 5px 5px rgba(0, 0, 0, .2);
+	} 100% {
+		box-shadow: inset -5px -5px 5px rgba(255, 255, 255, .6),
+		            inset 5px 5px 5px rgba(0, 0, 0, .2);
+	}
+
+}
+
+.container span + span {
+	margin-left: 2rem;
+}

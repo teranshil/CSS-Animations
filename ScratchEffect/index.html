@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const body = document.querySelector('body');
+        let lastX = 0, lastY = 0, spanRadius = 60;
+        document.addEventListener('mousemove', function (event) {
+
+
+            if(Math.abs(lastX - event.offsetX) >= spanRadius || Math.abs(lastY - event.offsetY) >= spanRadius) {
+
+                const bubbles = document.createElement('span');
+                bubbles.style.left = event.offsetX + 'px';
+                bubbles.style.top = event.offsetY + 'px';
+                bubbles.classList.add('bubble');
+                body.appendChild(bubbles);
+
+                lastX = event.offsetX;
+                lastY = event.offsetY;
+            }
+        });
+    </script>
+
+</body>
+</html>

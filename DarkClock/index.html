@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./style.css" >
+    <title>Title</title>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+</body>
+<script>
+   const currentDate = new Date();
+   console.log((360 / 12) * currentDate.getHours());
+   console.log(`rotate(${(360 / 10) * currentDate.getHours()}deg);`);
+   document.querySelector('.hour').style.transform = `rotate(${(360 / 12) * currentDate.getHours()}deg)`;
+</script>
+</html>

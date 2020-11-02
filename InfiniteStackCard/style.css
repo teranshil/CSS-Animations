@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&family=Noto+Sans+JP:wght@500&display=swap');
+*,
+*::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	min-height: 100vh;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Grenze Gotisch', sans-serif;
+	background-color: #fffdb3;
+}
+.loading {
+	position: relative;
+	width: 300px;
+	height: 400px;
+	perspective: 500px;
+	transform-style: preserve-3d;
+}
+.loading:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+}
+.loading:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	background: #45abc4;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, .2);
+}
+.loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	transform-style: preserve-3d;
+	z-index: 1;
+	animation: movement 5s infinite;
+	animation-delay: calc(.5s * var(--delay));
+}
+@keyframes movement {
+	0% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+	25% {
+		transform: translate3d(-50px, -50px, 50px);
+		opacity: 1;
+	}
+	35%, 100% {
+		transform: translate3d(-600px, -50px, 100px);
+		opacity: 0;
+	}
+
+}
+.loading div span {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+	font-weight: 400;
+}
+.loading div span:nth-child(2) {
+	background: #45abc4;
+}

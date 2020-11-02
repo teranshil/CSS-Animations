@@ -1,0 +1,40 @@
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	height: 100%;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+.heading {
+	position: absolute;
+	font-size: 8em;
+	text-transform: uppercase;
+}
+
+.heading:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 3px steelblue;
+}
+
+.heading:nth-child(2) {
+	color: steelblue;
+	animation: wave 4s infinite;
+}
+@keyframes wave {
+	0%, 100% {
+		clip-path: polygon(0 39%, 13% 32%, 30% 28%, 43% 34%, 54% 43%, 70% 48%, 84% 54%, 100% 50%, 100% 100%, 0 100%);
+	}
+	50% {
+		clip-path: polygon(0 62%, 20% 57%, 36% 51%, 49% 42%, 61% 34%, 75% 31%, 89% 35%, 100% 44%, 100% 100%, 0 100%);
+	}
+}
