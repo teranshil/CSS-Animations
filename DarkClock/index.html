@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./style.css" >
+    <script src="./script.js" rel="script" type="application/javascript" defer></script>
     <title>Title</title>
 </head>
 <body>
@@ -12,10 +13,4 @@
         <div class="second"></div>
     </div>
 </body>
-<script>
-   const currentDate = new Date();
-   console.log((360 / 12) * currentDate.getHours());
-   console.log(`rotate(${(360 / 10) * currentDate.getHours()}deg);`);
-   document.querySelector('.hour').style.transform = `rotate(${(360 / 12) * currentDate.getHours()}deg)`;
-</script>
 </html>

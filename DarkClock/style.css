@@ -46,8 +46,8 @@ body {
 	left: 50%;
 	height: 30%;
 	width: 8px;
-	transform-origin: 0 0;
-	transform: translateY(-100%) translateX(-50%);
+	transform-origin: 50% 100%;
+	transform: translate(-50%, -100%);
 	/*animation: rotation 7s infinite linear;*/
 	background: #ff105e;
 	border-radius: 3px;
@@ -57,10 +57,10 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 35%;
-	height: 6px;
-	transform-origin: 0 0;
-	transform: translateY(-50%);
+	width: 6px;
+	height: 35%;
+	transform-origin: 50% 100%;
+	transform: translate(-50%, -100%);
 	background: white;
 	border-radius: 3px;
 	z-index: -1;
@@ -70,10 +70,10 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 50%;
-	height: 4px;
-	transform-origin: 0 0;
-	transform: translateY(-50%) translateX(-15%);
+	width: 4px;
+	height: 50%;
+	transform-origin: 50% 85%;
+	transform: translate(-50%, -85%);
 	background: #3c93fc;
 	border-radius: 3px;
 	z-index: -1;
