@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <title>Title</title>
+</head>
+<body>
+    <section class="section">
+        <div class="left-section clock-section">
+           <span id="hours"></span>
+            <span class="dots">:</span>
+           <span id="minutes"></span>
+        </div>
+        <div class="right-section clock-section">
+            <span id="seconds"></span>
+        </div>
+    </section>
+<script type="text/javascript">
+
+    function setTime() {
+
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let seconds = document.getElementById('seconds');
+
+        let date = new Date();
+        //
+        hours.innerText = modify(date.getHours()) +  " ";
+        minutes.innerText = modify(date.getMinutes()) +  " ";
+        seconds.innerText = modify(date.getSeconds()) +  " ";
+    }
+
+    function modify(number) {
+        if(number < 10)
+            return '0' + number;
+        return number;
+    }
+
+    setInterval(setTime, 1000);
+
+</script>
+</body>
+</html>
