@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <title>Title</title>
+</head>
+<body id="body-container">
+    <div class="container">
+        <div class="box-shadow-container box-shadow-one">Shadow one</div>
+        <div class="box-shadow-container box-shadow-two">Shadow two</div>
+        <div class="box-shadow-container box-shadow-three">Shadow three</div>
+        <div class="box-shadow-container box-shadow-four">Shadow four</div>
+    </div>
+    <div id="color-picker-container">
+        <div class="color-picker" data-color="#008cff"></div>
+        <div class="color-picker" data-color="#3adc91"></div>
+        <div class="color-picker" data-color="red"></div>
+    </div>
+</body>
+<script>
+    let colors = document.getElementById('color-picker-container').children,
+        root = document.getElementsByTagName('html')[0],
+        color;
+
+    for(color of colors) {
+
+        color.style.backgroundColor = color.dataset.color;
+        color.addEventListener('click', (e) => {
+            root.style.setProperty('--main-color', e.target.dataset.color);
+        });
+    }
+</script>
+</html>
