@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*,
+*::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	min-height: 100vh;
+}
+.navigation {
+	position: fixed;
+	width: 60px;
+	height: 100%;
+	background-color: #c7ae68;
+	transition: width 0.5s ease-in-out;
+}
+.navigation.active {
+	width: 300px;
+}
+.navigation ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.navigation ul li {
+	position: relative;
+	width: 100%;
+	list-style: none;
+}
+.navigation ul li a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #fff;
+}
+.navigation ul li a:hover {
+	background-color: #99874e;
+}
+.navigation ul li a .icon {
+	position: relative;
+	display: block;
+	min-width: 60px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
+.navigation ul li a .icon .fas, .fa, .far {
+	font-size: 24px;
+}
+.navigation ul li a .title {
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+	white-space: nowrap;
+}
+.toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	background-color: #c7ae68;
+	cursor: pointer;
+}
+.toggle:hover {
+	background-color: #99874e;
+}
+.toggle::before {
+	content: "\f0c9";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 60px; /* set height to fontawesome icons */
+	font-size: 25px;
+	font-weight: 900;
+	text-align: center; /* center horizontally fontawesome icons*/
+	color: white;
+}
+.toggle.active::before {
+	content: '\f00d';
+}
